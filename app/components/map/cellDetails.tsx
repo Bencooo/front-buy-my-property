@@ -19,7 +19,7 @@ interface CellDetailsProps {
           <ul style={{ color: '#ffffff' }}>
             {details.map((cell, index) => (
               <li key={index}>
-                Position - Ligne : {cell.row + 1}, Colonne : {cell.col + 1}
+                Position - Ligne : {cell.row}, Colonne : {cell.col}
               </li>
             ))}
           </ul>

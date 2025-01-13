@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { ConnectButton } from "thirdweb/react";
-import { client } from "../../client";
+import { chain, client } from "../../client";
 
 const Header: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
         </nav>
 
         {/* Login Button */}
-        <ConnectButton client={client} />
+        <ConnectButton client={client} chain={chain} />
       </div>
     </header>
   );
