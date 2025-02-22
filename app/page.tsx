@@ -13,8 +13,12 @@ import { useActiveAccount, useWalletBalance } from "thirdweb/react";
 import Grid from "./components/map/map";
 import WorldInteraction from "./services/worldInterraction";
 import Grid2 from "./components/map/map2";
+import GlobeComponent from "./components/globe/globe";
 
 export default function Home() {
+  const handleCountrySelect = (country: { properties: { name: string } }) => {
+    console.log("🌍 Pays sélectionné :", country.properties.name);
+  };
   const account = useActiveAccount();
   const chain = {
     id: 1,
@@ -35,7 +39,7 @@ export default function Home() {
       {account ? (
         <div>
           <Grid2 />
-          <WorldInteraction />
+          <GlobeComponent onSelect={handleCountrySelect} />
         </div>
       ) : (
         <p style={{ color: "#fff" }}>
