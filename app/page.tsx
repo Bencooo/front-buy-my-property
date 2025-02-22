@@ -1,17 +1,26 @@
 "use client";
-import Image from "next/image";
+
+import dynamic from "next/dynamic";
+
+// Charger WorldInteraction dynamiquement sans SSR
+/*const WorldInteraction = dynamic(
+  () => import("./services/worldInterraction").then((mod) => mod.WorldInteraction),
+  { ssr: false }
+);*/
+
 import { client } from "./client";
 import { useActiveAccount, useWalletBalance } from "thirdweb/react";
-import Map from "./components/map/map";
 import Grid from "./components/map/map";
-import CellDetails from "./components/map/cellDetails";
+import WorldInteraction from "./services/worldInterraction";
+import Grid2 from "./components/map/map2";
 
 export default function Home() {
   const account = useActiveAccount();
   const chain = {
-    rpc: process.env.NEXT_PUBLIC_RPC,
+    id: 1,
+    rpc: process.env.NEXT_PUBLIC_RPC || "https://eth-sepolia.g.alchemy.com/v2/53FvNL1iPPzJwpB7P_2I1f1Fk_NpUI0f",
   };
-  const { data: balance, isLoading } = useWalletBalance({
+  const { /*data: balance, isLoading*/ } = useWalletBalance({
     client,
     chain,
     address: account?.address,
@@ -23,7 +32,16 @@ export default function Home() {
         backgroundColor: "#2c2c2c", // Fond gris foncé pour toute la page
       }}
     >
-      <Grid />
+      {account ? (
+        <div>
+          <Grid2 />
+          <WorldInteraction />
+        </div>
+      ) : (
+        <p style={{ color: "#fff" }}>
+          Veuillez connecter votre wallet pour accéder au contenu
+        </p>
+      )}
     </div>
   );
 }
