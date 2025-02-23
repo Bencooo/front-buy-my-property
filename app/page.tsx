@@ -14,6 +14,7 @@ import Grid from "./components/map/map";
 import WorldInteraction from "./services/worldInterraction";
 import Grid2 from "./components/map/map2";
 import GlobeComponent from "./components/globe/globe";
+import GlobePage from "./components/globe/globe2";
 
 export default function Home() {
   const handleCountrySelect = (country: { properties: { name: string } }) => {
@@ -38,8 +39,8 @@ export default function Home() {
     >
       {account ? (
         <div>
-          <Grid2 />
-          <GlobeComponent onSelect={handleCountrySelect} />
+          
+          <GlobePage />
         </div>
       ) : (
         <p style={{ color: "#fff" }}>
