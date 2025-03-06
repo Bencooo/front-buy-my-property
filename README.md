@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Buy My Property - Blockchain Land Ownership
 
-## Getting Started
+Bienvenue dans **Buy My Property**, une application décentralisée (dApp) permettant d'acheter des pays en tant que **NFTs** sur la blockchain Ethereum grâce à un système de **minting** sécurisé et un **relayer gasless** via **OpenZeppelin Defender**.
 
-First, run the development server:
+## 🚀 Fonctionnalités principales
+
+- **🌍 Globe 3D interactif** → Sélectionne un pays directement sur un globe terrestre.
+- **📍 Coordonnées simplifiées** → Conversion des coordonnées du GeoJSON en un système X/Y simple.
+- **✅ Minting des propriétés** → Achetez une parcelle de pays sous forme de NFT avec un simple clic.
+- **⚡ Transactions sans gas (Gasless)** → Utilisation d'un relayer via OpenZeppelin Defender.
+- **🔗 Intégration Thirdweb** → Gestion des contrats intelligents et des transactions sur Ethereum.
+
+---
+
+## 📦 Installation & Configuration
+
+### 🛠️ Prérequis
+
+- **Node.js** (v16+ recommandé)
+- **npm** ou **yarn**
+- **Metamask** (pour interagir avec la blockchain)
+- **Un compte Thirdweb**
+- **Un compte OpenZeppelin Defender** (pour le relayer gasless)
+
+### 🚀 Installation
+
+1. **Cloner le projet :**
+```sh
+   git clone https://github.com/votre-repo/buy-my-property.git
+   cd buy-my-property
+```
+2. **Installer les dépendances :**
+
+```bash
+npm install
+```
+
+3. **Créer un fichier .env.local et ajouter vos variables d'environnement :**
+
+```bash
+NEXT_PUBLIC_CONTRACT_ADDRESS=0xVotreContrat
+NEXT_PUBLIC_FORWARDER_ADDRESS=0xVotreForwarder
+NEXT_PUBLIC_RELAYER_URL=https://api.defender.openzeppelin.com/actions/...
+```
+
+4. **Lancer le projet en développement :**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 🎮 Utilisation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.Sélectionner un pays sur le globe 3D.
+2.Vérifier les informations affichées dans la pop-up.
+3.Cliquer sur "Acheter" pour mint la parcelle (sous forme de NFT).
+4.Consulter la transaction sur Etherscan (lien fourni après mint).

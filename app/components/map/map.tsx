@@ -22,12 +22,12 @@ const Grid: React.FC = () => {
     // Ajouter ou supprimer la position de la cellule sélectionnée
     setSelectedCells((prevSelectedCells) => {
       const cellIndex = prevSelectedCells.findIndex(cell => cell.row === row && cell.col === col);
-      
+
       // Si la cellule est déjà sélectionnée, on la supprime
       if (cellIndex !== -1) {
         return prevSelectedCells.filter((_, index) => index !== cellIndex);
       }
-      
+
       // Sinon, on l'ajoute
       return [...prevSelectedCells, { row, col }];
     });
@@ -80,6 +80,7 @@ const Grid: React.FC = () => {
 
       {/* Affichage des détails des cellules sélectionnées */}
       <CellDetails details={selectedCells} />
+
     </div>
   );
 };
